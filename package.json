@@ -17,7 +17,9 @@
     "test": "nyc --reporter=text --reporter=lcov mocha",
     "test-ci": "npm run lint && npm run test && codecov",
     "semantic-release": "semantic-release",
-    "commit": "git-cz"
+    "commit": "git-cz",
+    "snyk-protect": "snyk protect",
+    "prepare": "npm run snyk-protect"
   },
   "dependencies": {
     "@tripod/bunyan-syslog": "^0.3.2",
@@ -32,7 +34,8 @@
     "request-promise-native": "^1.0.7",
     "serverless-http": "^2.0.0",
     "webpack": "^4.30.0",
-    "yargs": "^13.2.4"
+    "yargs": "^13.2.4",
+    "snyk": "^1.189.0"
   },
   "devDependencies": {
     "@semantic-release/changelog": "^3.0.2",
@@ -70,5 +73,6 @@
     "ghooks": {
       "pre-commit": "npx lint-staged"
     }
-  }
+  },
+  "snyk": true
 }
