@@ -1,5 +1,5 @@
 # Openwhisk Action Builder
-> A multi-cloud deployment tool for serverless functions running on AWS Lambda, Adobe I/O Runtime, Azure Functions, and Google Cloud Functions. Write once, run everywhere.
+> Library and Commandline tool support for building and deploying OpenWhisk actions.
 
 ## Status
 [![GitHub license](https://img.shields.io/github/license/adobe/openwhisk-action-builder.svg)](https://github.com/adobe/openwhisk-action-builder/blob/main/LICENSE.txt)
