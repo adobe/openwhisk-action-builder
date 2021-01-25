@@ -68,14 +68,23 @@ async function createTestRoot() {
   return dir;
 }
 
-// set fake wsk props
-process.env.WSK_NAMESPACE = 'foobar';
-process.env.WSK_APIHOST = 'https://example.com';
-process.env.WSK_AUTH = 'fake-key';
-
 describe('Deploy Test', () => {
   let testRoot;
   let origPwd;
+
+  const savedEnv = {};
+
+  before(() => {
+    Object.assign(savedEnv, process.env);
+    // set fake wsk props
+    process.env.WSK_NAMESPACE = 'foobar';
+    process.env.WSK_APIHOST = 'https://example.com';
+    process.env.WSK_AUTH = 'fake-key';
+  });
+
+  after(() => {
+    process.env = savedEnv;
+  });
 
   beforeEach(async () => {
     testRoot = await createTestRoot();
@@ -85,6 +94,7 @@ describe('Deploy Test', () => {
   afterEach(async () => {
     process.chdir(origPwd);
     await fse.remove(testRoot);
+    nock.cleanAll();
   });
 
   it('reports nice error if no wsk props are set', async () => {

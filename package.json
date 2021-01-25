@@ -30,9 +30,9 @@
     "dotenv": "8.0.0",
     "fs-extra": "9.0.0",
     "isomorphic-git": "1.8.0",
-    "openwhisk": "3.17.0",
+    "openwhisk": "3.21.3",
     "semver": "7.0.0",
-    "webpack": "4.39.2",
+    "webpack": "5.17.0",
     "yargs": "16.0.0"
   },
   "devDependencies": {
