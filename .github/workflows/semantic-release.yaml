@@ -16,6 +16,9 @@ jobs:
           node-version: '12.x'
       - run: npm install
       - run: npm test
+        env:
+          WSK_AUTH: "${{ secrets.WSK_AUTH_HELIX }}"
+          WSK_NAMESPACE: helix
       - run: npm run semantic-release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
