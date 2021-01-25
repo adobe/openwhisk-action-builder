@@ -17,5 +17,8 @@ module.exports = () => {
   const data = fs.readFileSync(hello, 'utf-8');
   // eslint-disable-next-line no-console
   console.log(hello, data);
-  return data;
+  return {
+    statusCode: 200,
+    body: data,
+  };
 };

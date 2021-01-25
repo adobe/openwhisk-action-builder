@@ -62,6 +62,16 @@ describe('Build Test', () => {
   let testRoot;
   let origPwd;
 
+  const savedEnv = {};
+
+  before(() => {
+    Object.assign(savedEnv, process.env);
+  });
+
+  after(() => {
+    process.env = savedEnv;
+  });
+
   beforeEach(async () => {
     testRoot = await createTestRoot();
     await fse.copy(PROJECT_SIMPLE, testRoot);
@@ -88,10 +98,10 @@ describe('Build Test', () => {
     const res = await builder.run();
     assert.deepEqual(res, {
       name: 'openwhisk;host=https://example.com',
-      url: '/foobar/simple-package/simple-name@1.43',
+      url: '/foobar/simple-package/simple-name@2.0',
     });
 
-    await assertZipEntries(path.resolve(testRoot, 'dist', 'simple-package', 'simple-name@1.43.zip'), [
+    await assertZipEntries(path.resolve(testRoot, 'dist', 'simple-package', 'simple-name@2.0.zip'), [
       'main.js',
       'package.json',
       'files/hello.txt',
@@ -101,7 +111,7 @@ describe('Build Test', () => {
     ]);
 
     // unzip action again
-    const zipFile = path.resolve(testRoot, 'dist', 'simple-package', 'simple-name@1.43.zip');
+    const zipFile = path.resolve(testRoot, 'dist', 'simple-package', 'simple-name@2.0.zip');
     const zipDir = path.resolve(testRoot, 'dist', 'extracted');
     await new Promise((resolve, reject) => {
       yauzl.open(zipFile, { lazyEntries: true }, (err, zipfile) => {
@@ -137,7 +147,10 @@ describe('Build Test', () => {
     // eslint-disable-next-line global-require,import/no-dynamic-require
     const { main } = require(path.resolve(zipDir, 'main.js'));
     const ret = await main({});
-    assert.equal(ret, 'Hello, world.\n');
+    assert.deepEqual(ret, {
+      body: 'Hello, world.\n',
+      statusCode: 200,
+    });
   })
     .timeout(5000);
 });
