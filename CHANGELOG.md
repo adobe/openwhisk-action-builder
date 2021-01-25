@@ -1,3 +1,16 @@
+# [3.0.0](https://github.com/adobe/openwhisk-action-builder/compare/v2.15.1...v3.0.0) (2021-01-25)
+
+
+### Bug Fixes
+
+* **builder:** use webpack 5.x ([d520b2e](https://github.com/adobe/openwhisk-action-builder/commit/d520b2e9e7a60289df85c99f0f6534741e46c8d0)), closes [#182](https://github.com/adobe/openwhisk-action-builder/issues/182)
+* **cli:** use nodejs 12 as default ([235143b](https://github.com/adobe/openwhisk-action-builder/commit/235143b95dde6bb2772e349fab27bc3d90a1693b)), closes [#202](https://github.com/adobe/openwhisk-action-builder/issues/202)
+
+
+### BREAKING CHANGES
+
+* **cli:** nodejs:12 is now the default for running and deploying actions
+
 ## [2.15.1](https://github.com/adobe/openwhisk-action-builder/compare/v2.15.0...v2.15.1) (2020-11-12)
 
 
