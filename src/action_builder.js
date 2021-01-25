@@ -855,6 +855,7 @@ module.exports = class ActionBuilder {
     }
     const ret = await fetch(url, {
       headers,
+      redirect: 'manual',
     });
     const body = await ret.text();
     const id = ret.headers.get('x-openwhisk-activation-id');
