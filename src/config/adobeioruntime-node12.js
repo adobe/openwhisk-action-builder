@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Adobe. All rights reserved.
+ * Copyright 2021 Adobe. All rights reserved.
  * This file is licensed to you under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License. You may obtain a copy
  * of the License at http://www.apache.org/licenses/LICENSE-2.0
@@ -11,13 +11,13 @@
  */
 
 module.exports = {
-  // modules that are provided by the runtime nodejs 10 container
+  // modules that are provided by the runtime nodesjs 12 container
   externals: [
     'express',
     'body-parser',
     'cls-hooked',
-    'request',
-    'request-promise',
+    'redis',
+    'node-fetch',
     /^openwhisk(\/.*)?$/,
   ],
 };
