@@ -16,6 +16,9 @@
 const assert = require('assert');
 const path = require('path');
 
+const defaultConfig10 = require('../src/config/adobeioruntime-node10.js');
+const defaultConfig12 = require('../src/config/adobeioruntime-node12.js');
+
 const CLI = require('../src/cli.js');
 
 describe('CLI Test', () => {
@@ -26,7 +29,7 @@ describe('CLI Test', () => {
     assert.equal(builder._build, true);
     assert.equal(builder._test, undefined);
     assert.equal(builder._showHints, true);
-    assert.equal(builder._kind, 'nodejs:10');
+    assert.equal(builder._kind, 'nodejs:12');
     assert.equal(builder._docker, null);
     assert.deepEqual(builder._modules, []);
     assert.equal(JSON.stringify([...builder._statics]).toString(), '[]');
@@ -36,6 +39,7 @@ describe('CLI Test', () => {
     assert.equal(builder._updatePackage, false);
     assert.equal(builder._packageShared, false);
     assert.equal(builder._webSecure, undefined);
+    assert.deepEqual(builder._externals, defaultConfig12.externals);
   });
 
   it('sets verbose flag', () => {
@@ -90,6 +94,14 @@ describe('CLI Test', () => {
     const builder = new CLI()
       .prepare(['--kind', 'foo']);
     assert.equal(builder._kind, 'foo');
+    assert.deepEqual(builder._externals, []);
+  });
+
+  it('sets nodejs:10 kind', () => {
+    const builder = new CLI()
+      .prepare(['--kind', 'nodejs:10']);
+    assert.equal(builder._kind, 'nodejs:10');
+    assert.deepEqual(builder._externals, defaultConfig10.externals);
   });
 
   it('sets docker', () => {

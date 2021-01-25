@@ -15,7 +15,13 @@ const crypto = require('crypto');
 const yargs = require('yargs');
 const chalk = require('chalk');
 
-const defaultConfig = require('./config/adobeioruntime-node10.js');
+const defaultConfig10 = require('./config/adobeioruntime-node10.js');
+const defaultConfig12 = require('./config/adobeioruntime-node12.js');
+
+const defaultConfigs = {
+  'nodejs:10': defaultConfig10,
+  'nodejs:12': defaultConfig12,
+};
 
 class CLI {
   constructor() {
@@ -84,7 +90,7 @@ class CLI {
       })
       .option('kind', {
         description: 'Specifies the action kind.',
-        default: 'nodejs:10',
+        default: 'nodejs:12',
       })
       .option('web-export', {
         description: 'Annotates the action as web-action',
@@ -215,8 +221,8 @@ class CLI {
   prepare(args) {
     const argv = this._yargs.parse(args);
 
-    if (argv.externals.length === 0) {
-      argv.externals = defaultConfig.externals;
+    if (argv.externals.length === 0 && defaultConfigs[argv.kind]) {
+      argv.externals = defaultConfigs[argv.kind].externals;
     }
     return this.createBuilder()
       .verbose(argv.verbose)
