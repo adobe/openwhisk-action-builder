@@ -24,7 +24,7 @@
     "semantic-release": "semantic-release"
   },
   "dependencies": {
-    "@adobe/helix-fetch": "1.7.0",
+    "@adobe/helix-fetch": "1.9.2",
     "archiver": "5.0.0",
     "chalk": "4.0.0",
     "dotenv": "8.0.0",
