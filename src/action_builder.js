@@ -26,12 +26,14 @@ const { version } = require('../package.json');
 
 require('dotenv').config();
 
-const { fetch } = process.env.HELIX_FETCH_FORCE_HTTP1
-  ? fetchAPI.context({
-    httpProtocol: 'http1',
-    httpsProtocols: ['http1'],
-  })
-  : fetchAPI;
+function fetchContext() {
+  return process.env.HELIX_FETCH_FORCE_HTTP1
+    ? fetchAPI.context({
+      alpnProtocols: [fetchAPI.ALPN_HTTP1_1],
+    })
+    : fetchAPI;
+}
+const { fetch } = fetchContext();
 
 /**
  * Returns the `origin` remote url or `''` if none is defined.
