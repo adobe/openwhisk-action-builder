@@ -25,15 +25,15 @@
   },
   "dependencies": {
     "@adobe/helix-fetch": "2.1.0",
-    "archiver": "5.0.0",
-    "chalk": "4.0.0",
-    "dotenv": "8.0.0",
-    "fs-extra": "9.0.0",
+    "archiver": "5.2.0",
+    "chalk": "4.1.0",
+    "dotenv": "8.2.0",
+    "fs-extra": "9.1.0",
     "isomorphic-git": "1.8.0",
     "openwhisk": "3.21.3",
-    "semver": "7.0.0",
-    "webpack": "5.17.0",
-    "yargs": "16.0.0"
+    "semver": "7.3.4",
+    "webpack": "5.19.0",
+    "yargs": "16.2.0"
   },
   "devDependencies": {
     "@semantic-release/changelog": "5.0.1",
@@ -41,7 +41,7 @@
     "chai": "4.2.0",
     "chai-http": "4.3.0",
     "codecov": "3.8.1",
-    "eslint": "7.18.0",
+    "eslint": "7.19.0",
     "eslint-config-airbnb-base": "14.2.1",
     "eslint-plugin-header": "3.1.0",
     "eslint-plugin-import": "2.22.1",
@@ -50,7 +50,7 @@
     "lint-staged": "10.5.3",
     "mocha": "8.2.1",
     "mocha-junit-reporter": "2.0.0",
-    "nock": "13.0.6",
+    "nock": "13.0.7",
     "nyc": "15.1.0",
     "semantic-release": "17.3.7",
     "yauzl": "2.10.0"
