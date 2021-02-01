@@ -1,3 +1,10 @@
+## [3.0.5](https://github.com/adobe/openwhisk-action-builder/compare/v3.0.4...v3.0.5) (2021-02-01)
+
+
+### Bug Fixes
+
+* **builder:** reset fetch context to avoid hanging cli ([#210](https://github.com/adobe/openwhisk-action-builder/issues/210)) ([be42682](https://github.com/adobe/openwhisk-action-builder/commit/be426826fb7fd3a2545c9f8883fbc650ef13f0cc))
+
 ## [3.0.4](https://github.com/adobe/openwhisk-action-builder/compare/v3.0.3...v3.0.4) (2021-02-01)
 
 
