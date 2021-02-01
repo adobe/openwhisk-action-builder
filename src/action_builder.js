@@ -31,10 +31,8 @@ function fetchContext() {
     ? fetchAPI.context({
       alpnProtocols: [fetchAPI.ALPN_HTTP1_1],
     })
-    : fetchAPI;
+    : fetchAPI.context();
 }
-const { fetch } = fetchContext();
-
 /**
  * Returns the `origin` remote url or `''` if none is defined.
  *
@@ -855,24 +853,30 @@ module.exports = class ActionBuilder {
     } else if (this._webSecure) {
       headers['x-require-whisk-auth'] = this._webSecure;
     }
-    const ret = await fetch(url, {
-      headers,
-      redirect: 'manual',
-    });
-    const body = await ret.text();
-    const id = ret.headers.get('x-openwhisk-activation-id');
-    if (ret.ok) {
-      this.log.info(`id: ${chalk.grey(id)}`);
-      this.log.info(`${chalk.green('ok:')} ${ret.status}`);
-      this.log.debug(chalk.grey(body));
-    } else {
-      this.log.info(`id: ${chalk.grey(id)}`);
-      if (ret.status === 302 || ret.status === 301) {
+    const context = fetchContext();
+    try {
+      const ret = await context.fetch(url, {
+        headers,
+        redirect: 'manual',
+      });
+      const body = await ret.text();
+      const id = ret.headers.get('x-openwhisk-activation-id');
+      if (ret.ok) {
+        this.log.info(`id: ${chalk.grey(id)}`);
         this.log.info(`${chalk.green('ok:')} ${ret.status}`);
-        this.log.debug(chalk.grey(`Location: ${ret.headers.get('location')}`));
+        this.log.debug(chalk.grey(body));
       } else {
-        throw new Error(`test failed: ${ret.status} ${body}`);
+        this.log.info(`id: ${chalk.grey(id)}`);
+        if (ret.status === 302 || ret.status === 301) {
+          this.log.info(`${chalk.green('ok:')} ${ret.status}`);
+          this.log.debug(chalk.grey(`Location: ${ret.headers.get('location')}`));
+        } else {
+          throw new Error(`test failed: ${ret.status} ${body}`);
+        }
       }
+    } finally {
+      // disconnect to avoid hanging cli
+      context.reset();
     }
   }
 
