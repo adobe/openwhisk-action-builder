@@ -1,3 +1,10 @@
+## [3.0.11](https://github.com/adobe/openwhisk-action-builder/compare/v3.0.10...v3.0.11) (2021-02-22)
+
+
+### Bug Fixes
+
+* **deps:** update dependency webpack to v5.23.0 ([#218](https://github.com/adobe/openwhisk-action-builder/issues/218)) ([929e583](https://github.com/adobe/openwhisk-action-builder/commit/929e5831835167a121a7954e8f7724bf41971c35))
+
 ## [3.0.10](https://github.com/adobe/openwhisk-action-builder/compare/v3.0.9...v3.0.10) (2021-02-16)
 
 
