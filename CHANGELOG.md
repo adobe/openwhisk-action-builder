@@ -1,3 +1,10 @@
+## [3.0.17](https://github.com/adobe/openwhisk-action-builder/compare/v3.0.16...v3.0.17) (2021-03-25)
+
+
+### Bug Fixes
+
+* **deps:** update dependency @adobe/helix-fetch to v2.1.9 ([7e00c15](https://github.com/adobe/openwhisk-action-builder/commit/7e00c156bd07cab492b7c765436ea7fc51c50083))
+
 ## [3.0.16](https://github.com/adobe/openwhisk-action-builder/compare/v3.0.15...v3.0.16) (2021-03-22)
 
 
