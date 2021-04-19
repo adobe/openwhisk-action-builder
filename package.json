@@ -29,10 +29,10 @@
     "chalk": "4.1.0",
     "dotenv": "8.2.0",
     "fs-extra": "9.1.0",
-    "isomorphic-git": "1.8.1",
+    "isomorphic-git": "1.8.2",
     "openwhisk": "3.21.3",
     "semver": "7.3.5",
-    "webpack": "5.31.2",
+    "webpack": "5.33.2",
     "yargs": "16.2.0"
   },
   "devDependencies": {
