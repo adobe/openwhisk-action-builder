@@ -32,7 +32,7 @@
     "isomorphic-git": "1.8.2",
     "openwhisk": "3.21.3",
     "semver": "7.3.5",
-    "webpack": "5.35.1",
+    "webpack": "5.36.2",
     "yargs": "17.0.0"
   },
   "devDependencies": {
