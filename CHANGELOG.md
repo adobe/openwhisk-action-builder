@@ -1,3 +1,10 @@
+## [3.0.25](https://github.com/adobe/openwhisk-action-builder/compare/v3.0.24...v3.0.25) (2021-05-25)
+
+
+### Bug Fixes
+
+* **deps:** update dependency dotenv to v10 ([9c6530e](https://github.com/adobe/openwhisk-action-builder/commit/9c6530e33bfdea2a066b229bc97284bec205314c))
+
 ## [3.0.24](https://github.com/adobe/openwhisk-action-builder/compare/v3.0.23...v3.0.24) (2021-05-17)
 
 
