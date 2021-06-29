@@ -1,3 +1,10 @@
+## [3.0.27](https://github.com/adobe/openwhisk-action-builder/compare/v3.0.26...v3.0.27) (2021-06-29)
+
+
+### Bug Fixes
+
+* **deps:** update external ([6e5d006](https://github.com/adobe/openwhisk-action-builder/commit/6e5d0066c0c31bbadba868fa28a57b64dfb75ae9))
+
 ## [3.0.26](https://github.com/adobe/openwhisk-action-builder/compare/v3.0.25...v3.0.26) (2021-06-11)
 
 
