@@ -2,7 +2,7 @@
 > Library and Commandline tool support for building and deploying OpenWhisk actions.
 
 **Note**: This package is deprecated and will no longer be worked on. 
-[Helix-universal](https://github.com/adobe/helix-universal) is the direct successor and allows 
+[Helix-Universal](https://github.com/adobe/helix-universal) is the direct successor (100% CLI-compatible) and allows 
 to build and deploy actions to multiple clouds.
 
 ## Status
@@ -304,4 +304,3 @@ with the bundle, a `package.json`, the private key files and the `.env`.
 If you have suggestions for how these OpenWhisk Action Utilities could be improved, or want to report a bug, open an issue! We'd love all and any contributions.
 
 For more, check out the [Contributing Guide](CONTRIBUTING.md).
-
