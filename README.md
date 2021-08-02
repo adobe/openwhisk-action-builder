@@ -1,6 +1,10 @@
 # Openwhisk Action Builder
 > Library and Commandline tool support for building and deploying OpenWhisk actions.
 
+**Note**: This package is deprecated and will no longer be worked on. 
+[Helix-universal](https://github.com/adobe/helix-universal) is the direct successor and allows 
+to build and deploy actions to multiple clouds.
+
 ## Status
 [![GitHub license](https://img.shields.io/github/license/adobe/openwhisk-action-builder.svg)](https://github.com/adobe/openwhisk-action-builder/blob/main/LICENSE.txt)
 [![GitHub issues](https://img.shields.io/github/issues/adobe/openwhisk-action-builder.svg)](https://github.com/adobe/openwhisk-action-builder/issues)
