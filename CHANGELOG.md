@@ -1,3 +1,10 @@
+## [3.0.30](https://github.com/adobe/openwhisk-action-builder/compare/v3.0.29...v3.0.30) (2021-08-02)
+
+
+### Bug Fixes
+
+* deprecte message ([#263](https://github.com/adobe/openwhisk-action-builder/issues/263)) ([952cc1d](https://github.com/adobe/openwhisk-action-builder/commit/952cc1ddd7ef1261ce3cee068bfe062a169771ad))
+
 ## [3.0.29](https://github.com/adobe/openwhisk-action-builder/compare/v3.0.28...v3.0.29) (2021-08-02)
 
 
